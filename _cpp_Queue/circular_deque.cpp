@@ -40,15 +40,15 @@ using namespace std;
 
 class MyCircularDeque {
     vector<int> queue;
-    int head = 0; // goes forward
-    int tail = 0; // goes backward
+    int head = 0; // goes forward always
+    int tail = 0; // goes backward always
     // +------+---+---+---+--+--+--+--+--+--+------+
     // |  0   | 1 | 2 | 3 |  |  |  |  |  |  | n-1  |
     // +------+---+---+---+--+--+--+--+--+--+------+
     // | head |   |   |   |  |  |  |  |  |  | tail |
     // +------+---+---+---+--+--+--+--+--+--+------+
-    int capacity = 0;
-    int count = 0;
+    int capacity = 0;       // Max Size of the Queue
+    int count = 0;          // Curr Sie of the Dequeue
 
 public:
     /** Initialize your data structure here. Set the size of the deque to be k. */
@@ -128,48 +128,7 @@ public:
     }
 };
 
-
-
-class MyCircularDequeGFG{
-    private:
-        vector<int> dq;
-        int front;
-        int last;
-        int size;
-
-    public:
-        MyCircularDequeGFG(int k): front(-1), last(0), size(k) {}
-
-        int isFull(){
-            if((front == 0 && last == size-1) || (front == last+1)){
-                return true;
-            }
-            return false;
-        }
-
-
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// NO Need to go through this
 class MyCircularDeque2 {
 private:
     vector<int> deq;
