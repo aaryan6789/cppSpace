@@ -1,5 +1,5 @@
 // LRU Cache | https://leetcode.com/problems/lru-cache/
-
+#include "cache.h"
 /**
  * Design and implement a data structure for Least Recently Used (LRU) cache.
  * It should support the following operations: get and put.
@@ -36,7 +36,7 @@
 // STL container list as a Double Ended Queue to store cache Keys.
 // Descending Time of Reference from front to back and a set container to check
 // the presence of a key.
-// To fethc the address of the key in the list using find() it takes O(N) time.
+// But To fetch the address of the key in the list using find() it takes O(N) time.
 // It can be optimized by storing a reference to each key in a Hash map.
 
 #include <iostream>
@@ -92,6 +92,79 @@ void LRUCache::display(){
     cout << endl;
 }
 
+// Better Approach
+// Data Structure Used = List
+// Most recent key-value pair is in the fron tof the list
+// A map for a Quick reference to the keys in the cache
+class LRUCache2 {
+public:
+    int cap;                        // Capacity of the Cache
+    list< pair<int,int> > li;       // Data Structure to keep cache data
+    unordered_map<int, list<pair<int,int> >::iterator> mp;  // A map for quick reference
+    // Iterator is useful in list splicing for moving the recently used pair to the fron of the list
+
+    // Constructor
+    LRUCache2(int capacity) {
+        cap = capacity;
+    }
+
+    // Insert in the Cache
+    void put(int key, int value) {
+        std::cout << "Inserting " << key << " " << value << " in the cache" << endl;
+        // If key is already present in the cache then update its value
+        if(get(key) != -1){
+            mp[key]->second = value;
+            return;
+        }
+        // If Key is not in the cache
+        // Then 1. Cache has space to insert another value
+        //      2. Cache is Full and LRU Policy kicks in
+        if(cap == mp.size()){
+            int dkey = li.back().first;
+            li.pop_back();
+            mp.erase(dkey);
+        }
+
+        // 1. Cache has space to insert
+        li.push_front({key, value});
+        mp[key] = li.begin();       // Point to the first element in the cache
+    }
+
+    int get(int key) {
+        // Cache Miss
+        if(mp.find(key) == mp.end()){
+            std::cout << "Key = " << key << " is not in the cache" << endl;
+            return -1;
+        }
+
+        // cache-hit
+        // Update Cache Record by moving accessed key to front of the list
+        li.splice(li.begin(), li, mp[key]);     // mp[key] is {key, value}
+
+        return mp[key]->second;
+    }
+
+};
+
+/**
+ * list::splice()
+ * It is a built-in function in C++ STL which is used to transfer elements from
+ *  one list to another.
+ *
+ * The splice() function can be used in three ways:
+ *
+ * 1. Transfer all the elements of list x into another list at some position.
+ * 2. Transfer only the element pointed by i from list x into the list at some position.
+ * 3. Transfers the range [first, last) from list x into another list at some position.
+ *
+ * Syntax:
+ * list1_name.splice (iterator position, list2)
+ *                 or
+ * list1_name.splice (iterator position, list2, iterator i)
+ *                 or
+ * list1_name.splice (iterator position, list2, iterator first, iterator last)
+ */
+
 int main(){
     LRUCache ca(4);
 
@@ -104,6 +177,17 @@ int main(){
     ca.refer(4);
     ca.refer(5);
     ca.display();
+
+    LRUCache2 ca2(2);
+
+    ca2.put(1, 1);
+    ca2.put(2, 2);
+    ca2.get(1);
+    ca2.put(3, 3);
+    ca2.get(2);
+
+
+
 
 }
 
