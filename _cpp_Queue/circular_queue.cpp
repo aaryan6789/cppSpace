@@ -41,7 +41,7 @@
 using namespace std;
 
 // Using Vector and 4 variables
-
+// template <class T>
 class MyCircularQueue {
 public:
     vector<int> data;
@@ -54,9 +54,9 @@ public:
     MyCircularQueue(int k) : max_size(k) {
         // Assign Capacity to the Circular Queue
         data.resize(k);
-        start = 0;
-        end = -1;
-        curr_size = 0;
+        this->start = 0;
+        this->end = -1;
+        this->curr_size = 0;
     }
 
     /** Insert an element into the circular queue.

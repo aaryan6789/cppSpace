@@ -25,7 +25,8 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
     if (!lists.size())
         return nullptr;
 
-    priority_queue<ListNode*, vector<ListNode*>, cmp> pq;
+    priority_queue<ListNode*, vector<ListNode*>, cmp> pq;       // minHeap
+    // Push the head nodes of all the lists on the min heap
     for (auto lh : lists){
         if (lh)
             pq.push(lh);
@@ -33,9 +34,10 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
 
     ListNode* dummy = new ListNode(-1);
     ListNode* p = dummy;
-    while (!pq.empty()){
-        ListNode* smallest = pq.top();
+    while (!pq.empty()){                    // Loop till minHeap is not empty
+        ListNode* smallest = pq.top();      // Get the Top elemment from the heap which is the smallest
         pq.pop();
+
         p->next = smallest;
         p = p->next;
         if (smallest->next){
@@ -49,28 +51,36 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
 }
 
 ListNode *mergeKListsHeap(vector<ListNode *> &lists) { //priority_queue
+    // Create a min Heap
     priority_queue<ListNode *, vector<ListNode *>, cmp> q;
 
-    for(auto l : lists) {
-        if(l)  q.push(l);
+    // Push the head nodes of all the lists on the min heap
+    for(auto lh : lists) {
+        if(lh)
+            q.push(lh);
     }
 
-    if(q.empty())
+    if(q.empty())       // Boundary Check: If there are no elements on the heap then NULL
         return NULL;
 
+    // The head of the result list is going to be the top element from the minHeap
     ListNode* result = q.top();
     q.pop();
 
+    // Top element could be pointing to its next element. If it does then push it on the heap
     if(result->next)
-        q.push(result->next);
+        q.push(result->next);       // This will call heapify operation
 
-    ListNode* tail = result;
-    while(!q.empty()) {
-        tail->next = q.top();
+    // Lets have a runner pointer
+    ListNode* current = result;
+    while(!q.empty()) {         // loop till the minHeap becomes empty
+        current->next = q.top();        // Now make links
         q.pop();
-        tail = tail->next;
-        if(tail->next)
-            q.push(tail->next);
+
+        current = current->next;
+        // Push the next element of the list on the heap
+        if(current->next)
+            q.push(current->next);
     }
 
     return result;

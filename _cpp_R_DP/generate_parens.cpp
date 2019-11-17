@@ -16,14 +16,6 @@
  */
 
 /// Recusrive Solution
-
-vector<string> generateParenthesis(int n) {
-    vector<string> result;
-    string paren;
-    generate(n, 0, 0, paren, result);
-    return result;
-}
-
 void generate(int n, int l, int r, string paren, vector<string>& result) {
     if (l == n && r == n) {
         result.push_back(paren);
@@ -39,17 +31,16 @@ void generate(int n, int l, int r, string paren, vector<string>& result) {
     }
 }
 
-// recursive DFS
-
-vector<string> generateParenthesis2(int n) {
+vector<string> generateParenthesis(int n) {
     vector<string> result;
-    string paren_str;
-
-    dfs(result, paren_str, n, 0, 0);
-
+    string paren;
+    generate(n, 0, 0, paren, result);
     return result;
 }
 
+
+
+// recursive DFS
 void dfs(vector<string> & result, string & paren_str, int n, int left, int right) {
     if (paren_str.size() == n * 2) {
         result.push_back(paren_str);
@@ -69,12 +60,17 @@ void dfs(vector<string> & result, string & paren_str, int n, int left, int right
     }
 }
 
+vector<string> generateParenthesis2(int n) {
+    vector<string> result;
+    string paren_str;
 
+    dfs(result, paren_str, n, 0, 0);
 
-
+    return result;
+}
 
 /// Iterative Solution
-vector<string> generateParenthesis(int n) {
+vector<string> generateParenthesisI(int n) {
     if (!n) {
         return {""};
     }
@@ -82,8 +78,8 @@ vector<string> generateParenthesis(int n) {
     vector<string> parens;
 
     for (int i = 0; i < n; i++) {
-        for (string l : generateParenthesis(i)) {
-            for (string r : generateParenthesis(n - 1 - i)) {
+        for (string l : generateParenthesisI(i)) {
+            for (string r : generateParenthesisI(n - 1 - i)) {
                 parens.push_back('(' + l + ')' + r);
             }
         }

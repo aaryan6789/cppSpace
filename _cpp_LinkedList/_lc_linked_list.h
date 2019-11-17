@@ -25,3 +25,5 @@ ListNode* reverseList(struct ListNode *head);
 ListNode* reverseKGroup(ListNode* head, int k);
 ListNode* reverseKGroup2(ListNode* head, int k);
 int countListNode(ListNode* head);
+
+void practice_1();

@@ -100,8 +100,10 @@ class LRUCache2 {
 public:
     int cap;                        // Capacity of the Cache
     list< pair<int,int> > li;       // Data Structure to keep cache data
-    unordered_map<int, list<pair<int,int> >::iterator> mp;  // A map for quick reference
-    // Iterator is useful in list splicing for moving the recently used pair to the fron of the list
+
+    // Iterator is useful in list splicing for moving the recently used pair to the front of the list
+    using lru_iterator = list<pair<int,int> >::iterator;
+    unordered_map<int, lru_iterator> map;  // A map for quick reference
 
     // Constructor
     LRUCache2(int capacity) {
@@ -113,35 +115,35 @@ public:
         std::cout << "Inserting " << key << " " << value << " in the cache" << endl;
         // If key is already present in the cache then update its value
         if(get(key) != -1){
-            mp[key]->second = value;
+            map[key]->second = value;
             return;
         }
         // If Key is not in the cache
         // Then 1. Cache has space to insert another value
         //      2. Cache is Full and LRU Policy kicks in
-        if(cap == mp.size()){
+        if(cap == map.size()){
             int dkey = li.back().first;
             li.pop_back();
-            mp.erase(dkey);
+            map.erase(dkey);
         }
 
         // 1. Cache has space to insert
         li.push_front({key, value});
-        mp[key] = li.begin();       // Point to the first element in the cache
+        map[key] = li.begin();       // Point to the first element in the cache
     }
 
     int get(int key) {
         // Cache Miss
-        if(mp.find(key) == mp.end()){
+        if(map.find(key) == map.end()){
             std::cout << "Key = " << key << " is not in the cache" << endl;
             return -1;
         }
 
         // cache-hit
-        // Update Cache Record by moving accessed key to front of the list
-        li.splice(li.begin(), li, mp[key]);     // mp[key] is {key, value}
+        // Update Cache Record by moving accessed key to beginning of the lru_queue list
+        li.splice(li.begin(), li, map[key]);     // map[key] is {key, value}
 
-        return mp[key]->second;
+        return map[key]->second;
     }
 
 };

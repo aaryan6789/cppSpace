@@ -18,6 +18,23 @@ void get_nth_node(ListNode *head, int n) {
 	cout << "The " << n << "th node is " << current->val << endl;
 }
 
+/* Get the nth node from the front */
+ListNode* getNth(ListNode* head, int n){
+	ListNode* current = head;
+	int count = 1;
+
+	while (current != NULL) {
+		count++;
+		current= current->next;
+
+		if (count == n)
+			break;
+	}
+
+	return current;
+}
+
+
 /* Get the nth node from the last */
 void get_nth_last(ListNode* head, int n){
 	ListNode *fast, *slow;

@@ -90,7 +90,7 @@ vector<vector<int>> verticalTraversal(TreeNode* root) {
     queue<pair<TreeNode*, int> > que;
     que.push(make_pair(root, hd));
 
-        while (!que.empty()){
+    while (!que.empty()){
         // pop from queue front
         pair<TreeNode *,int> temp = que.front();
         que.pop();

@@ -36,6 +36,7 @@ using namespace std;
  */
 bool isValid(string s) {
     std::stack<char> st;
+
     for(char& c : s){
         if(c == '('|| c == '{' || c == '['){
             st.push(c);

@@ -6,9 +6,16 @@
  *
  * Example 2:
  * Input: 1->1->1->2->3    ----------->>>>> Output: 2->3
- *
  */
 #include "_lc_linked_list.h"
+
+/**
+ * The idea is to maintain a pointer (prev) to the node which just previous to
+ * the block of nodes we are checking for duplicates.
+ */
+
+
+
 void removeAllDuplicates(ListNode* head) {
    /* create a dummy node that acts like a fake
 	  head of list pointing to the original head*/
