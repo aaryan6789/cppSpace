@@ -11,6 +11,17 @@ Example 2:
 Input: 1->1->2->3->3
 Output: 1->2->3
  */
+
+/**
+ * Algorithm:
+ * Traverse the list from the head (or start) node. While traversing,
+ * compare each node with its next node.
+ * If data of next node is same as current node then delete the next node.
+ * Before we delete a node, we need to store next pointer of the node.
+ *
+ * Time Complexity - O(n)
+ */
+
 ListNode* deleteDuplicates(ListNode* head) {
     if(!head)
         return head;

@@ -90,36 +90,6 @@ public:
     }
 };
 
-
+#include "cache.h"
 // Better
-class LRUCache2 {
-public:
-    int cap;
-    list< pair<int,int> > li;
-    unordered_map<int, list<pair<int,int> >::iterator> mp;
 
-    LRUCache2(int capacity) {
-        cap = capacity;
-    }
-
-    int get(int key) {
-        if(mp.find(key) == mp.end())
-            return -1;
-        li.splice(li.begin(), li, mp[key]);
-        return mp[key]->second;
-    }
-
-    void put(int key, int value) {
-        if(get(key) != -1){
-            mp[key]->second = value;
-            return;
-        }
-        if(cap == mp.size()){
-            int dk = li.back().first;
-            li.pop_back();
-            mp.erase(dk);
-        }
-        li.emplace_front(key, value);
-        mp[key] = li.begin();
-    }
-};

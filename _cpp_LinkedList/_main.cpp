@@ -17,23 +17,23 @@ int main() {
 	sll.printList();
 
 	// LinkedList sl2 = new LinkedList();
-	ListNode* head = new ListNode(10);
-	insertBeg(&head, 21);
-	insertBeg(&head, 22);
-	insertBeg(&head, 23);
+	// ListNode* head = new ListNode(10);
+	// insertBeg(&head, 21);
+	// insertBeg(&head, 22);
+	// insertBeg(&head, 23);
 
-	printList(head);
+	// printList(head);
 
-	ListNode* list1 = new ListNode(1);
-	insertBeg(&list1, 2);
-	insertBeg(&list1, 3);
+	// ListNode* list1 = new ListNode(1);
+	// insertBeg(&list1, 2);
+	// insertBeg(&list1, 3);
 
-	ListNode* list2 = new ListNode(2);
-	insertBeg(&list2, 2);
-	insertBeg(&list2, 2);
+	// ListNode* list2 = new ListNode(2);
+	// insertBeg(&list2, 2);
+	// insertBeg(&list2, 2);
 
-	printList(list1);
-	printList(list2);
+	// printList(list1);
+	// printList(list2);
 
 	// ListNode* res = addTwoLists(list1, list2);
 	// printList(res);
@@ -68,11 +68,18 @@ int main() {
     printList(head2);
     cout << countListNode(head2) << endl;
     // call reverseKGroup() here
-    head2 = reverseKGroup2(head2, 3);
+    head2 = reverseKGroup(head2, 3);
     cout << "Reversed linked list" << endl;
 
     printList(head2);
-    return(0);
+
+
+
+
+
+
+
+	return(0);
 
 
 

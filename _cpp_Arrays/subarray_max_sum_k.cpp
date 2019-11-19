@@ -19,29 +19,29 @@
 //
 using namespace std;
 int maxSubArrayLen(vector<int>& A, int k) {
-        unordered_map<int, int> map;
-        int currSum = 0;
-        int maxLen = 0;
+    unordered_map<int, int> map;
+    int currSum = 0;
+    int maxLen = 0;
 
-        for(int i = 0; i< A.size(); i++){
-            currSum += A[i];
+    for(int i = 0; i< A.size(); i++){
+        currSum += A[i];
 
-            // insert in the map if the CurrSum is not present (keeping only the left most index)
-            if(!map.count(currSum)){
-                map[currSum] = i;
-            }
-
-            if(currSum == k){
-                maxLen = max(maxLen, i+1);
-            }
-
-            int temp = currSum - k;
-            if(map.find(temp) != map.end()){
-                maxLen = max(maxLen, (i - map[temp]));
-            }
-
-            // cout << currSum << " " << i << " " << (currSum - k) <<  " " << maxLen << endl;
+        // insert in the map if the CurrSum is not present (keeping only the left most index)
+        if(!map.count(currSum)){
+            map[currSum] = i;
         }
 
-        return maxLen;
+        if(currSum == k){
+            maxLen = max(maxLen, i+1);
+        }
+
+        int temp = currSum - k;
+        if(map.find(temp) != map.end()){
+            maxLen = max(maxLen, (i - map[temp]));
+        }
+
+        // cout << currSum << " " << i << " " << (currSum - k) <<  " " << maxLen << endl;
     }
+
+    return maxLen;
+}

@@ -3,10 +3,13 @@
 using namespace std;
 
 // Inheritance
-// The capability of a class to derive properties and characteristics from another class is called Inheritance.
+// The capability of a class to derive properties and characteristics from
+// another class is called Inheritance.
 
-// Multiple Inheritance is a feature of C++ where a class can inherit from more than one classes.
-// The constructors of inherited classes are called in the same order in which they are inherited.
+// Multiple Inheritance is a feature of C++ where a class can inherit from more
+// than one classes.
+// The constructors of inherited classes are called in the same order in which
+// they are inherited.
 // For example, in the following program, B’s constructor is called before A’s constructor.
 
 // The destructors are called in reverse order of constructors.

@@ -1,22 +1,20 @@
 #include "_lc_linked_list.h"
 
 /**
- * Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
-
-k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.
-
-Example:
-
-Given this linked list: 1->2->3->4->5
-
-For k = 2, you should return: 2->1->4->3->5
-
-For k = 3, you should return: 3->2->1->4->5
-
-Note:
-
-Only constant extra memory is allowed.
-You may not alter the values in the list's nodes, only nodes itself may be changed.
+ * Given a linked list, reverse the nodes of a linked list k at a time and
+ * return its modified list.
+ *
+ * k is a positive integer and is less than or equal to the length of the linked list.
+ * If the number of nodes is not a multiple of k then left-out nodes in the end
+ * should remain as it is.
+ *
+ * Example:
+ * Given this linked list: 1->2->3->4->5
+ * For k = 2, you should return: 2->1->4->3->5
+ * For k = 3, you should return: 3->2->1->4->5
+ * Note:
+ * Only constant extra memory is allowed.
+ * You may not alter the values in the list's nodes, only nodes itself may be changed.
  */
 
 
@@ -57,13 +55,15 @@ ListNode* reverseKGroup(ListNode* head, int k) {
     }
     cout << "prev = " << prev->val << endl;
 
-    // next is now a pointer to (k+1)th node
-    // Recursively call for the list starting from current.
+    // next is now a pointer to (k+1)th node (also current is at k+1th node)
+    // Recursively call for the list starting from current/next.
     // And make rest of the list as next of first node
     if(next != NULL){
         cout << "next = " << next->val << endl;
         cout << "head = " << head->val << endl;
-        head->next = reverseKGroup(next, k);
+        head->next = reverseKGroup(next, k);        // Head is still the 1st node, and
+                                                    // for making the links it should point to the
+                                                    // head of the next group. That we get after reversing the group
     }
 
     return prev;
