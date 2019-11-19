@@ -3,12 +3,12 @@
 
 // Max Heap can be used to implement a Priority Queue.
 // Heaps are stored as Arrays/ Vectors.
-// The Order in which heap elements are stored in a vector are level by level form Binary Heap.
+// The Order in which heap elements are stored in a vector are level by level
+// form Binary Heap.
 
 // Heapify Up and Heapify Down
 // Heapify_up when we push an item to the heap
 // heapify Down when we pop from heap
-
 
 // Data Structure for Min Heap aka PriorityQueue
 template <class T>

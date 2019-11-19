@@ -1,13 +1,25 @@
 /* main.cpp  * Created on: Aug 11, 2018 * Author: Harsh */
 
 
-#include "iostream"
+#include <iostream>
 #include "test.hpp"
 using namespace std;
 /* About Namespace
  * This tells the compiler to assume we are using the standard library,
  * so we don�t have to write std::.
  */
+
+class GfG
+{
+  public:
+    int i = 9;
+
+    GfG()
+    {
+        // Do nothing
+    };
+};
+
 
 
 int main(){
@@ -25,6 +37,15 @@ int main(){
 	int integer = 4543;
 	std::cout << "\nThe value of integer is \n" << integer;
 	cout << "\n" << integer;
+
+	GfG obj1;
+	GfG obj2;
+	obj1.i =2;
+	obj2.i = 3;
+
+	// prints value of i
+	cout << obj1.i << " " << obj2.i;
+
 
 	sizeOfVariables();
 	outputFormatting();

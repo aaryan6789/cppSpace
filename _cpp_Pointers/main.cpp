@@ -33,7 +33,6 @@ int main() {
     // If we want to know what is stored in this address, we can dereference pointerToA:
     std::cout << "pointerToA points to " << * pointerToA << '\n';
 
-
     /* Pointer to Integers and Characters     */
     int * pointerI;
     int number;
@@ -50,27 +49,23 @@ int main() {
 
     pointerS = &sentence;
     *pointerS = "Hey look at me, I know pointers!";
+    cout << "sentence = " << sentence << endl;
+    cout << "pointerS = " << *pointerS << endl;
 
-    std::cout << "number = "   << number<<"\n";
-    std::cout << "character = "<< character<<"\n";
-    std::cout << "sentence = " << sentence<<"\n";
-
-
-    // unsigned char half_limit = 150;
-    // for (unsigned char i = 0; i < 2 * half_limit; ++i)
-    // {
-    //     std::cout << i << " do something" << std::endl;
-    // }
+    std::cout << "number    = " << number    << endl;
+    std::cout << "character = " << character << endl;
+    std::cout << "sentence  = " << sentence  << endl;
 
     Test1();
 
+    cout << "\n======== \nReferences\n======== " << endl;
     a = 100;
-    int&ref = a;
+    int &ref = a;
 
     ref++;
     a++;
-    cout << "a = " << a << " refa " << ref << "or" << *(&ref) << endl;
-    cout << "Addresss of a " << &a << " Address of refa = " << &(ref) << endl;
+    cout << "a = " << a << " refa " << ref << " or " << *(&ref) << endl;
+    cout << "Addresss of a   = " << &a << " \nAddress of refa = " << &(ref) << endl;
 
     int b = 55;
     int& refb = a;
@@ -78,6 +73,12 @@ int main() {
     refb = b;
 
     cout << "b = " << b << " refb " << refb << endl;
+
+
+    unique_pointer();
+
+    shared_pointer();
+    cyclic_dependency();
 
     return 0;
 }
