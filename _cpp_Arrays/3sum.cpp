@@ -1,5 +1,5 @@
 #include "_array.h"
-
+using namespace std;
 /**
  * LEETCODE M | 15
  * Given an array nums of n integers, are there elements a, b, c in nums
