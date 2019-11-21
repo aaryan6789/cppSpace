@@ -1,5 +1,5 @@
-/** Voyage
- *
+/** Voyage | Applied Intuition
+ * 
  * Check if a destination is reachable from source with two movements allowed
  * Given coordinates of a source point (x1, y1) determine if it is possible to
  * reach the destination point (x2, y2).
