@@ -185,7 +185,7 @@ int uniquePathsWithObstacles2(vector<vector<int>>& obstacleGrid) {
 
 
 
-int uniquePathsWithObstacles(int R, int C, int obstacleGrid[R][C]) {
+int uniquePathsWithObstacles(int R, int C, int obstacleGrid[][C]) {
 	// If the starting cell has an obstacle, then simply return as there would be
 	// no paths to the destination.
 	if (obstacleGrid[0][0] == 1) {
