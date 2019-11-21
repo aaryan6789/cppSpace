@@ -4,9 +4,7 @@
  * Longest Palindrome Subsequence
  * Given a string, find longest subsequence that is a palindrome.
  */
-int longestPalindromeSubseq(string s) {
-    return longestPalindromeSubseq(0,s.size()-1,s);
-}
+
 
 
 int longestPalindromeSubseq(int l, int r, string &s) {
@@ -16,6 +14,9 @@ int longestPalindromeSubseq(int l, int r, string &s) {
         max(longestPalindromeSubseq(l+1,r, s),longestPalindromeSubseq(l,r-1, s));
 }
 
+int longestPalindromeSubseqR(string s) {
+    return longestPalindromeSubseq(0,s.size()-1,s);
+}
 
 int longestPalindromeSubseqDP(string s) {
     int n = s.size();

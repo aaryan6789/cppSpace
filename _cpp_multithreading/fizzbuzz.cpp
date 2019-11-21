@@ -1,6 +1,8 @@
 #include <mutex>
 #include <condition_variable>
 #include <iostream>
+#include <utility>
+#include <algorithm>
 using namespace std;
 
 
@@ -74,3 +76,8 @@ public:
         }
     }
 };
+
+int main(){
+    FizzBuzz f;
+    return 0;
+}

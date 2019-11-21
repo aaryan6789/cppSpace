@@ -114,7 +114,7 @@ bool matches(map<char, int> s1, map<char, int> s2){
 }
 
 // Using Maps
-bool checkInclusion(string s1, string s2) {
+bool checkInclusion2(string s1, string s2) {
     int len1 = s1.length();
     int len2 = s2.length();
     map<char, int> s1map;

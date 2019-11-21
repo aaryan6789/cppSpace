@@ -22,8 +22,7 @@ int main(){
 
     cout << "Inorder Traversal Recursive for " << root->val << endl;
     inOrderTraversalR2(root);
-
-    reverseLevelOrder(root);
+    printZigZagTraversal
     printZigZagTraversal(root);
 
 

@@ -22,9 +22,9 @@ using namespace std;
  *
  * Explanation: All root-to-leaf paths are: 1->2->5, 1->3
  */
+void helper(vector<string> &res, string &cur, TreeNode *root);
 
-
-vector<string> binaryTreePaths(TreeNode* root) {
+vector<string> binaryTreePathsR(TreeNode* root) {
     vector<string> res;
     if(root == nullptr)
         return res;
@@ -54,7 +54,7 @@ void helper(vector<string> &res, string &cur, TreeNode *root) {
 
 
 
-vector<string> binaryTreePaths(TreeNode* root) {
+vector<string> binaryTreePathsI(TreeNode* root) {
     vector<string> res;
     if(root == nullptr)
         return res;

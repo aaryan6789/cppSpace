@@ -1,4 +1,6 @@
 #include "_array.h"
+#include <algorithm>
+#include <cmath>
 /**
  * LeetCode M | 987
  *

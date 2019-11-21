@@ -42,7 +42,7 @@ void unique_pointer(){
     cout << "\n======\nUnique Pointer \n======" << endl;
     // Declare a Unique Pointer
     unique_ptr<int> val (new int(15));
-    cout << "Unique Pointer Address (val) = " << val << endl;
+    cout << "Unique Pointer Address (val) = " << &val << endl;
     cout << "Unique Pointer Value (*val)  = " << *val << endl;
 
     int x = 45;
@@ -50,7 +50,7 @@ void unique_pointer(){
     cout << "\nx = " << x << "\nptrX value (*ptrX) = " << *ptrX << endl;
 
     unique_ptr<int> val2 (new int(22));
-    cout << "Unique Pointer Address (val2) = " << val2 << endl;
+    cout << "Unique Pointer Address (val2) = " << &val2 << endl;
     cout << "Unique Pointer Value (*val2)  = " << *val2 << endl;
 
     // unique_ptr<int> val3 (ptrX);
@@ -60,7 +60,7 @@ void unique_pointer(){
     cout << "\n Moveing val2 into val4" << endl;
     unique_ptr<int> val4 = move(val2);
     // unique_ptr<int> val4 = val2;         // Compiler Error that Copy Contructor is Deleted
-    cout << "Unique Pointer Address (val4) = " << val4 << endl;
+    cout << "Unique Pointer Address (val4) = " << &val4 << endl;
     cout << "Unique Pointer Value (*val4)  = " << *val4 << endl;
 
 

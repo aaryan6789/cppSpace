@@ -1,4 +1,6 @@
-// LRU Cache | https://leetcode.com/problems/lru-cache/
+
+    printZigZagTraversal
+    printZigZagTraversal// LRU Cache | https://leetcode.com/problems/lru-cache/
 #include "cache.h"
 /**
  * Design and implement a data structure for Least Recently Used (LRU) cache.

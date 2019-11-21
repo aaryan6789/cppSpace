@@ -1,5 +1,5 @@
 /* invert_tree.c  * Created on: May 30, 2018 * Author: Harsh */
-#include "binary_tree.h"
+#include "_tree.h"
 
 /* LeetCode Easy
  *  Invert a binary tree.

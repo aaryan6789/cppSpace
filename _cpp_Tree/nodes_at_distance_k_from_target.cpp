@@ -36,7 +36,8 @@ void printMap(unordered_map<TreeNode* , int>& map){
     }
     cout << endl;
 }
-
+int find(TreeNode* root, TreeNode* target);
+void dfs(TreeNode* root, TreeNode* target, int K, int level, vector<int>& res);
 vector<int> distanceK(TreeNode* root, TreeNode* target, int K) {
     vector<int> res;
 

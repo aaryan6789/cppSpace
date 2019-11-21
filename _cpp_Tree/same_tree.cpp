@@ -15,7 +15,7 @@ bool isSameTree(TreeNode* p, TreeNode* q) {
 }
 
 // BFS + queue
-bool isSameTree(TreeNode* p, TreeNode* q) {
+bool isSameTree2(TreeNode* p, TreeNode* q) {
     queue<pair<TreeNode*, TreeNode*>> myQueue;
     myQueue.push(make_pair(p, q));
     while (!myQueue.empty()) {

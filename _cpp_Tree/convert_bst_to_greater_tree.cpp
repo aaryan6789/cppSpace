@@ -65,7 +65,7 @@ recursive solution, and is crucial for the guarantee of visiting nodes in order
   Eventually, our stack is empty and node points to the left null child of the
   tree's minimum value node, so the loop terminates. */
 
-TreeNode* convertBST(TreeNode* root) {
+TreeNode* convertBST2(TreeNode* root) {
     int sum = 0;
     TreeNode* temp = root;
     stack<TreeNode*> st;

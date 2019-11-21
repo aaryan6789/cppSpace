@@ -1,6 +1,6 @@
 #include "_tree.h"
 
-
+TreeNode* dfs(vector<int>& preorder, int ps, int pe, vector<int>& inorder, int is, int ie);
 unordered_map<int, int> in_map;
 
 TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {

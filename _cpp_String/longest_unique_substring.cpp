@@ -2,7 +2,7 @@
 #include "_string.h"
 #include <map>
 
-int lengthOfLongestSubstring(string s) {
+int lengthOfLongestUniqueSubstring(string s) {
     map<char, int> charMap;         // Like we had Visited Array in C
     int start = -1;
     int maxLen = 0;

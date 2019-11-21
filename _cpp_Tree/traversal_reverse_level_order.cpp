@@ -1,4 +1,5 @@
 #include "_tree.h"
+#include <algorithm>
 
 /* Given a binary tree, return the bottom-up level order traversal of its TreeNodes
  * values. (ie, from left to right, level by level from leaf to root).

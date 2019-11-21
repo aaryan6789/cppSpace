@@ -12,8 +12,8 @@ int diameter(struct TreeNode* root){
 	if(root == NULL)
 		return 0;
 
-	int lheight = maxDepthR(root->left);
-	int rheight = maxDepthR(root->right);
+	int lheight = maxDepth(root->left);
+	int rheight = maxDepth(root->right);
 
 	int ldia = diameter(root->left);
 	int rdia = diameter(root->right);

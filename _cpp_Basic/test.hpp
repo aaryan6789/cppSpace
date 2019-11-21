@@ -3,6 +3,10 @@
 #ifndef TEST_HPP_
 #define TEST_HPP_
 
+#include <climits>
+
+
+
 void sizeOfVariables();
 int outputFormatting();
 int hello();
