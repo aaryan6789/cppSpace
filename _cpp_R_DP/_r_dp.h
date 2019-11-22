@@ -16,3 +16,7 @@ vector<string> generateParenthesis2(int n);
 int countWaysDP(int n);
 
 int countWaysR(int n);
+
+
+int rob(vector<int>& nums);
+int rob_2(vector<int>& nums);
