@@ -33,6 +33,29 @@ Output:
 #include <algorithm>
 using namespace std;
 
+
+// Anti Clock Wise Rotation :
+// Transpose the Matrix --> Reverse Colums
+
+// Clock Wise Rotation :
+// Transpose the Matrix --> Reverse Rows
+
+// Time complexity : O(n2)
+// Space complexity : O(1) since we do a rotation in place.
+void rotate(vector<vector<int>>& matrix) {
+    int R = matrix.size();
+    
+    // Transpose the Matrix
+    for(int i=0; i<R; i++)
+        for(int j=0; j<i; j++)
+            swap(matrix[i][j], matrix[j][i]);
+    
+    // Reverse the Rows
+    for(int i=0; i<R; i++)
+        reverse(matrix[i].begin(), matrix[i].end());
+}
+
+
 // Transpose a NxN Matrix only means the rows becomes columns and cols becomes rows
 void transpose(vector<vector<int>>& mat){
     cout << "Transposing " << endl;
@@ -68,3 +91,9 @@ void rotateMatrix(vector<vector<int>>& mat){
     transpose(mat);
     reverseColums(mat);
 }
+
+
+
+
+
+
