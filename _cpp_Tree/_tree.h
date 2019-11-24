@@ -23,6 +23,15 @@ struct TreeNode {
 //     return ntNode;
 // }
 
+template <typename T>
+void printArray(const vector<T>& A){
+    for(int i = 0 ; i< A.size() ; i++){
+        cout << A[i] << " ";
+    }
+    cout << endl;
+}
+
+
 // TreeNode Size
 int size2(TreeNode* root);
 int size(TreeNode* root);
@@ -53,4 +62,10 @@ vector<int> inorderTraversal(TreeNode* root);
 void reverseLevelOrder(TreeNode* root);
 vector<vector<int>> zigzagLevelOrder(TreeNode* root);
 void printZigZagTraversal(struct TreeNode* root);
+
+
+
+vector<string> binaryTreePathsI(TreeNode* root);
+
+vector<string> binaryTreePathsII(TreeNode* root);
 

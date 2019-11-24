@@ -5,6 +5,13 @@
 
 
 int main(){
+    /**        root
+     *          10
+     *        /   \
+     *      20     30
+     *    /   \
+     *  40     50
+     */
     TreeNode* root = new TreeNode(10);
     TreeNode left1(20);
     TreeNode right1(30);
@@ -22,8 +29,8 @@ int main(){
 
     cout << "Inorder Traversal Recursive for " << root->val << endl;
     inOrderTraversalR2(root);
-    printZigZagTraversal
     printZigZagTraversal(root);
+    binaryTreePathsII(root);
 
 
 

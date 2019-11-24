@@ -158,4 +158,28 @@ void inOrderStack(TreeNode* root){
 }
 
 
+// Application of Inorder Traversal
+// 1. Kth Smallest Element ins a BST
+// Do an inorder traversal.
+// return the k-1 th element
+
+
+int kthSmallest(TreeNode* root, int k) {
+	stack<TreeNode *> st;
+	TreeNode *p = root;
+	while(p || !st.empty())
+	{
+		while(p)
+		{
+			st.push(p);
+			p = p->left;
+		}
+		p = st.top();
+		if(--k == 0)
+			return p->val;
+		st.pop();
+		p = p->right;
+	}
+}
+
 
