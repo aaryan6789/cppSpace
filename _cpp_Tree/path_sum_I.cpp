@@ -39,3 +39,31 @@ bool hasPathSum(TreeNode* root, int sum) {
 	return hasPathSum(root->left, subSum) || hasPathSum(root->right, subSum);
 
 }
+
+
+/*** level-bfs-iterative solution  ***/
+bool hasPathSumI(TreeNode* root, int sum){
+	if(root==NULL)  return false;
+	
+	queue<TreeNode*> q;
+	q.push(root);
+	while(q.size()>0){
+		TreeNode* node=q.front();
+		q.pop();
+		if(node->left==NULL && node->right==NULL){
+			if(node->val==sum)  
+				return true;
+		}
+
+		if(node->left){
+			node->left->val+=node->val;
+			q.push(node->left);
+		}
+		
+		if(node->right){
+			node->right->val+=node->val;
+			q.push(node->right);
+		}
+	}
+	return false;
+}
