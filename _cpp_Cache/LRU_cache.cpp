@@ -1,6 +1,4 @@
-
-    printZigZagTraversal
-    printZigZagTraversal// LRU Cache | https://leetcode.com/problems/lru-cache/
+// LRU Cache | https://leetcode.com/problems/lru-cache/
 #include "cache.h"
 /**
  * Design and implement a data structure for Least Recently Used (LRU) cache.
@@ -129,7 +127,7 @@ public:
             map.erase(dkey);
         }
 
-        // 1. Cache has space to insert
+        // 1. Cache has space 
         li.push_front({key, value});
         map[key] = li.begin();       // Point to the first element in the cache
     }

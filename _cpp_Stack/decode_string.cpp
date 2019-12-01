@@ -21,7 +21,7 @@ using namespace std;
 string decodeString1(string s) {
     stack<string> chars;
     stack<int> nums;
-    string res;
+    string curr;
     int num = 0;
     
     for(char c : s) {
@@ -29,25 +29,25 @@ string decodeString1(string s) {
             num = num*10 + (c-'0');         // Convert into a number                      
         }
         else if(isalpha(c)) {
-            res.push_back(c);
+            curr = curr + c;
         }
         else if(c == '[') {
-            chars.push(res);
+            chars.push(curr);
             nums.push(num);
-            res = "";
+            curr = "";
             num = 0;
         }
         else if(c == ']') {
-            string tmp = res;
+            string tmp = curr;
             for(int i = 0; i < nums.top()-1; ++i) {
-                res += tmp;
+                curr += tmp;
             }
-            res = chars.top() + res;
+            curr = chars.top() + curr;
             chars.pop(); 
             nums.pop();
         }
     }
-    return res;
+    return curr;
 }
 
 

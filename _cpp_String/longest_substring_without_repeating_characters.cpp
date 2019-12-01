@@ -49,13 +49,17 @@ int lengthOfLongestSubstring(string s){
 int lengthOfLongestSubstring2(string s){
     int maxlen = 0;
     int start = -1;
-    vector<int> bits(256, -1);
+    vector<int> last(256, -1);      // Last index of the character  -1 init val
+    last[s[0]] = 0;                 // 1st element
 
     for (int i = 0; i < s.length(); i++) {
-        if (bits[s[i]] > start) {
-            start = bits[s[i]];
+
+        if (last[s[i]] > start) {
+            start = last[s[i]];
         }
-        bits[s[i]] = i;
+
+        last[s[i]] = i;
+
         maxlen = max(maxlen, i - start);
     }
 

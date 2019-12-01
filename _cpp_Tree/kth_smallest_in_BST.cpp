@@ -48,7 +48,7 @@ int kthSmallest(TreeNode* root, int k) {
 }
 
 
-int kthSmallest(TreeNode* root, int k) {
+int kthSmallestI(TreeNode* root, int k) {
     if(root == NULL){
         return 0;
     }
@@ -57,17 +57,19 @@ int kthSmallest(TreeNode* root, int k) {
     
     while(root != NULL || !dfs.empty()){
         while(root != NULL){
-        dfs.push(root);
-        root = root->left;
+            dfs.push(root);
+            root = root->left;
         }
+
         if(k > 1){
             root = dfs.top();
             dfs.pop();
             root = root->right;
                 k--;
-        } else {
+        } 
+        else {
             return dfs.top()->val;
-        }
+    }
     }
     return 0;        
 }
