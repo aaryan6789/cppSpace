@@ -78,7 +78,7 @@ int DFS(string s, int n){
 
 
 
-int numDecodings(string s) {
+int numDecodingsR(string s) {
     if(s.size() == 0){
         return 0;
     }
