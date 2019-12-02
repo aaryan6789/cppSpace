@@ -32,47 +32,47 @@
  * logs[i] is guaranteed to have an identifier, and a word after the identifier.
  */
 
-    static bool myCompare(pair<string, string>& p1, pair<string, string>& p2){
-        if(p1.second == p2.second){
-            if(p1.first > p2.first)
-                return false;
-            else
-                return true;
+static bool myCompare(pair<string, string>& p1, pair<string, string>& p2){
+    if(p1.second == p2.second){
+        if(p1.first > p2.first)
+            return false;
+        else
+            return true;
+    }
+    else {
+        if(p1.second > p2.second)
+            return false;
+        else
+            return true;
+    }
+}
+
+vector<string> reorderLogFiles(vector<string>& logs) {
+    vector<string> digitLogs;
+    vector<pair<string, string>> letterLogs;
+    
+    // Get the Strings from the Logs
+    for(const auto& str : logs){
+        int pos = str.find(" ");    // Find the space digit
+        
+        // If the Following char is a Digit then push it ot digitLogs else to letter Logs
+        if(isdigit(str[pos+1])){
+            digitLogs.push_back(str);
         }
-        else {
-            if(p1.second > p2.second)
-                return false;
-            else
-                return true;
+        else{
+            letterLogs.push_back(make_pair(str.substr(0, pos), str.substr(pos+1)));
         }
     }
     
-    vector<string> reorderLogFiles(vector<string>& logs) {
-        vector<string> digitLogs;
-        vector<pair<string, string>> letterLogs;
-        
-        // Get the Strings from the Logs
-        for(const auto& str : logs){
-            int pos = str.find(" ");    // Find the space digit
-            
-            // If the Following char is a Digit then push it ot digitLogs else to letter Logs
-            if(isdigit(str[pos+1])){
-                digitLogs.push_back(str);
-            }
-            else{
-                letterLogs.push_back(make_pair(str.substr(0, pos), str.substr(pos+1)));
-            }
-        }
-        
-        sort(letterLogs.begin(), letterLogs.end(), myCompare);
-        vector<string> result;
-        for(const auto& str : letterLogs){
-            string res = str.first + " " + str.second;
-            result.push_back(res);
-        }
-        
-        for(const auto& str : digitLogs)
-            result.push_back(str);
-        
-        return result;
+    sort(letterLogs.begin(), letterLogs.end(), myCompare);
+    vector<string> result;
+    for(const auto& str : letterLogs){
+        string res = str.first + " " + str.second;
+        result.push_back(res);
     }
+    
+    for(const auto& str : digitLogs)
+        result.push_back(str);
+    
+    return result;
+}
