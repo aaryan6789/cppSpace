@@ -21,6 +21,14 @@ int main(){
 
     cout << "Max Area Islands = " << maxAreaOfIsland(grid2) << endl;
 
+    vector<vector<char>> grid3 = {{'O', 'O', 'O', 'O'},
+                                  {'D', 'O', 'D', 'O'},
+                                  {'O', 'O', 'O', 'D'},
+                                  {'D', 'D', 'O', 'X'}};
 
+    // cout << "Treasure Isalnd = " << treasure_island(grid3) << endl;
+
+
+    cout << "Treasure Isalnd = " << treasure_island_BFS(grid3) << endl;
 
 }

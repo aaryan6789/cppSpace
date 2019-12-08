@@ -52,7 +52,8 @@ void cyclic_dependency(){
     cout << "\nShared pointer : CYCLIC DEPENDENCY " << endl;
     class B;
     class A {
-        shared_ptr<B> sP1; // use weak_ptr instead to avoid CD
+        // shared_ptr<B> sP1; // use weak_ptr instead to avoid CD
+        weak_ptr<B> sP1; // use weak_ptr instead to avoid CD
 
     public:
         A() {
@@ -69,7 +70,8 @@ void cyclic_dependency(){
     };
 
     class B {
-        shared_ptr<A> sP1;
+        // shared_ptr<A> sP1;
+        weak_ptr<A> sP1;
 
     public:
         B() {  cout << "B()" << endl; }
@@ -88,6 +90,8 @@ void cyclic_dependency(){
 }
 
 /*
-As we can see from the output that A and B pointer are never deleted and hence memory leak.
-To avoid such issue just use weak_ptr in class A instead of shared_ptr which makes more sense.
+As we can see from the output that A and B pointer are never deleted and 
+hence memory leak.
+To avoid such issue just use weak_ptr in class A instead of shared_ptr which 
+makes more sense.
 */
