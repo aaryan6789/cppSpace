@@ -26,8 +26,8 @@ After running your function, the 2D grid should be:
  */
 
 
-vector<vector<int>> dirs = {{-1,0},{0,1},{1,0},{0,-1}};
 
+void dfs (vector<vector<int>>& rooms, int r, int c, int distance);
 // Using DFS
 void wallsAndGates(vector<vector<int>>& rooms) {
     int R = rooms.size();
@@ -43,11 +43,15 @@ void wallsAndGates(vector<vector<int>>& rooms) {
 }
 
 void dfs (vector<vector<int>>& rooms, int r, int c, int distance) {
+    // Terminating Condition
+    // If the rooms[r][c] is less than the distance then we are already at the
+    // nearest distance from one of the gates. So we can return early.
     if (r<0 || r>=rooms.size() || c<0 || c>=rooms[0].size() || rooms[r][c] < distance) 
         return;
 
     rooms[r][c] = distance;
-
+    
+    vector<vector<int>> dirs = {{-1,0},{0,1},{1,0},{0,-1}};
     for (int k=0; k<4; k++) {
         int i = r + dirs[k][0];
         int j = c + dirs[k][1];
@@ -79,7 +83,7 @@ void wallsAndGatesBFS(vector<vector<int>>& rooms) {
             }
         }
     }
-    
+    vector<vector<int>> dirs {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
     while(!q.empty()){
         pair<int, int> temp = q.front();
         q.pop();
@@ -95,6 +99,7 @@ void wallsAndGatesBFS(vector<vector<int>>& rooms) {
             if(r<0 || r>= R || c< 0 || c>= C || rooms[r][c] != INT_MAX){
                 continue;
             }
+            
             rooms[r][c] = dist + 1;
             q.push({r, c});
         }

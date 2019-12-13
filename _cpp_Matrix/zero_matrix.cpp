@@ -66,6 +66,7 @@ using namespace std;
  */
 
 void setZeroes(vector<vector<int>>& matrix) {
+    cout << "Setting Zeros " << endl;
     // variables to check if there are any 1 in first row and column
     bool row_flag = false;
     bool col_flag = false;
@@ -75,7 +76,7 @@ void setZeroes(vector<vector<int>>& matrix) {
 
     // Update the first row and col flags if 0 is encountered
     for(int i = 0; i< R; i++){
-        for(int j = 0; j< C; i++){
+        for(int j = 0; j< C; j++){
             if (i == 0 && matrix[i][j] == 0)        // If any 0 in first row
                 row_flag = true;
 
@@ -101,16 +102,46 @@ void setZeroes(vector<vector<int>>& matrix) {
     }
 
     // modify first row if there was any 1
-    if (row_flag == true) {
+    if (row_flag) {
         for (int i = 0; i < C; i++) {
             matrix[0][i] = 0;
         }
     }
 
     // modify first col if there was any 1
-    if (col_flag == true) {
+    if (col_flag) {
         for (int i = 0; i < R; i++) {
             matrix[i][0] = 0;
         }
+    }
+}
+
+void setZeroes2(vector<vector<int>>& matrix) {
+    bool row = false, col = false;
+    for(int i = 0; i < matrix.size(); i++){
+        for(int j = 0; j < matrix[0].size(); j++){
+            if(matrix[i][j] == 0) {
+                if(i == 0) row = true;
+                if(j == 0) col = true;
+                matrix[0][j] = matrix[i][0] = 0;
+            }
+        }
+    }
+    
+    for(int i = 1; i < matrix.size(); i++){
+        for(int j = 1; j < matrix[0].size(); j++){
+            if(matrix[i][0] == 0 || matrix[0][j] == 0) 
+                matrix[i][j] = 0;
+        }
+    }
+
+    if(col){
+        for(int i = 0; i < matrix.size(); i++) 
+            matrix[i][0] = 0;
+    }
+
+    if(row){
+        for(int j = 0; j < matrix[0].size(); j++) 
+            matrix[0][j] = 0;
     }
 }

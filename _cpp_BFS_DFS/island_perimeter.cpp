@@ -61,7 +61,6 @@ int numNeighbors(vector<vector<int>>& grid, int r, int c){
 
 }
 
-
 int islandPerimeter(vector<vector<int>>& grid) {
     if (grid.empty()){
         return 0;

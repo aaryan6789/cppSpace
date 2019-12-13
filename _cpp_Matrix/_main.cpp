@@ -45,5 +45,15 @@ int main(){
 
     printMatrix(grid2);
     rotateMatrix(grid2);
+
+    vector<vector<int> > grid3 = {{ 1, 1, 1, 1 },
+                                { 1, 0, 1, 1 },
+                                { 1, 1, 0, 1 },
+                                { 1, 1, 1, 1 } };
+
+    setZeroes(grid3);
+    printMatrix(grid3);
+
+
     return 0;
 }

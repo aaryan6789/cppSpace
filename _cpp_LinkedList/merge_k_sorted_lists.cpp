@@ -15,6 +15,7 @@ Output: 1->1->2->3->4->4->5->6
  */
 
 
+// Decl Type
 struct cmp{
     bool operator() (ListNode* l1, ListNode* l2){
         return l1->val > l2->val;

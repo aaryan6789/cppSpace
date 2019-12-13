@@ -31,4 +31,12 @@ int main(){
 
     cout << "Treasure Isalnd = " << treasure_island_BFS(grid3) << endl;
 
+    cout << "II" << endl;
+    vector<vector<char>> grid4 = {{'S', 'O', 'O', 'S', 'S'},
+                                  {'D', 'O', 'D', 'O', 'D'},
+                                  {'O', 'O', 'O', 'O', 'X'},
+                                  {'X', 'D', 'D', 'O', 'O'},
+                                  {'X', 'D', 'D', 'D', 'O'}};
+    cout << "Treasure Isalnd II = " << treasure_island_II(grid4) << endl;                   
+
 }

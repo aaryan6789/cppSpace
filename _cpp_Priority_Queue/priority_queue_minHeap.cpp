@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include "_pq.h"
 
 // Max Heap can be used to implement a Priority Queue.
 // Heaps are stored as Arrays/ Vectors.
@@ -143,6 +144,6 @@ int main(){
     pq.dequeue();
     pq.dequeue();
     pq.top();
-
+    priority_queue_basics();
 }
 

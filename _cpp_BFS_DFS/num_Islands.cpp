@@ -128,6 +128,6 @@ int numIslandsBFS(vector<vector<char>>& grid){
 }
 
 //Complexity Analysis
-//Time complexity : O(M×N) where MM is the number of rows and NN is the number of columns.
-//Space complexity : O(min(M,N)) because in worst case where the grid is filled with lands,
-//  the size of queue can grow up to min(M,NM,N).
+//Time complexity : O(M×N) where M is the number of rows and N is the number of columns.
+//Space complexity : O(min(M,N)) because in worst case where the grid is filled 
+// with lands, the size of queue can grow up to min(M,N).
