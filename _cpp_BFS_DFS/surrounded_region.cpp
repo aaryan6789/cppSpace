@@ -13,6 +13,7 @@
  *     X O X X           X 1 X X             X O X X
  *     X O X X           X 1 X X             X O X X
  **/
+void check(vector<vector<char>>& board, int i, int j);
 void solve(vector<vector<char>>& board) {
     if (board.empty()) return;
     int row = board.size(), col = board[0].size();

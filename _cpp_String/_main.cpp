@@ -52,6 +52,24 @@ int main(){
     compress(chars);
     printRLE(pan);
 
+    string ss = "append";
+    kSubstring(ss, 2);
+
+    ss = "parisbaguette";
+    kSubstring(ss, 3);
+
+    ss = "abcabc"; 
+    kSubstring(ss, 3);
+
+    ss = "abacab";
+    kSubstring(ss, 3);
+
+    ss = "awaglknagawunagwkwagl";
+    kSubstring(ss, 4);
+
+
+
+
 
     return 0;
 }

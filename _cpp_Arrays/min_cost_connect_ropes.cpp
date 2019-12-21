@@ -25,3 +25,5 @@ Input: ropes = [2, 2, 3, 3]
 Output: 20
  */
 
+// Using a Heap
+

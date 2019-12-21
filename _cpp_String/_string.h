@@ -28,3 +28,6 @@ void permutation_palindrome(string& str);
 
 int compress(vector<char>& chars);
 void printRLE(string str);
+
+
+unordered_set<string> kSubstring(string s, int k);

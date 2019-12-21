@@ -26,7 +26,7 @@ N is in range [1,200].
 M[i][i] = 1 for all students.
 If M[i][j] = 1, then M[j][i] = 1.
  */
-
+void dfs(vector<vector<int>>& M, vector<int>& visited, int i);
 int findCircleNum(vector<vector<int>>& M) {
     vector<int> visited(M.size(), 0);
     int i = 0;
@@ -55,7 +55,7 @@ void dfs(vector<vector<int>>& M, vector<int>& visited, int i) {
 // Space complexity : O(n). visited array of size n is used.
 **/
 
-int findCircleNum(vector<vector<int>>& M) {
+int findCircleNum2(vector<vector<int>>& M) {
     vector<int> visited(M.size());
     int count = 0;
     queue<int> q;
