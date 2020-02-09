@@ -29,7 +29,7 @@ void checkPermutation(string s1, string s2){
     return;
 }
 
-void checkPermutation1(string s1, string s2){
+void checkPermutation1(string s1, string s2) {
     if (s1.length() != s2.length()){
         cout << s1 << " and " << s2 << " are not Permutations!" << endl;
         return;

@@ -51,7 +51,7 @@
 
 // Always check for a new max for each of these 3 use cases by adding the path value of the left subtree and right subtree. m=max(m,l+r). It is OK to add l and r together when checking for a new max for each of the 3 use cases above, since l and/or r are set to 0 when applicable ( i.e. for case 2: 0+0==0 and for case 3: l+0==l XOR 0+r==r ).
 
-
+int go(TreeNode* root, int& m);
 int longestUnivaluePath(TreeNode* root) {
     if (!root) 
         return 0;

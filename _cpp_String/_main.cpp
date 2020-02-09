@@ -67,9 +67,12 @@ int main(){
     ss = "awaglknagawunagwkwagl";
     kSubstring(ss, 4);
 
+    vector<string> products = {"mobile", "mouse", "moneypot", "monitor", "mousepad"};
+    string search = "mouse";
 
+    suggestedProducts(products, search);
 
-
+    testTopNBuzz();
 
     return 0;
 }

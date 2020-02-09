@@ -1,7 +1,7 @@
 #include <iostream>
 #include <thread>
 
-
+using namespace std;
 
 void thread_function()
 {
@@ -46,7 +46,30 @@ int thread_pass_arguments();
 int thread_race_condition_demp();
 int thread_cv_mutex();
 
+#include <vector>
+
+void thread1(vector<int>& val) {
+    cout << "Inside Thread 1 " << endl; 
+
+    val.push_back(10);
+}
+
+
 int main(){
+
+    vector<int> val;
+
+    thread t1(thread1, ref(val));
+
+    t1.join();
+
+    for(auto i : val){
+        cout << i << endl;
+    }
+
+
+
+
     // 1. Creating a thread using Function Pointer
     std::thread threadObj1(thread_function);
     for(int i = 0; i < 1000000; i++);     // Just For sleeping
@@ -82,13 +105,12 @@ int main(){
     threadObj3.join();
     std::cout<<"Exiting from Main Thread \n"<<std::endl;
 
-    thread_id_demo();
-
-    thread_join();
-    thread_pass_arguments();
-    thread_race_condition_demp();
-
-    thread_cv_mutex();
+    // // Calling Thread Demo Functions
+    // thread_id_demo();
+    // thread_join();
+    // thread_pass_arguments();
+    // thread_race_condition_demp();
+    // thread_cv_mutex();
     
     return 0;
 }

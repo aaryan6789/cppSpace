@@ -22,3 +22,8 @@ int treasure_island_II(vector<vector<char>>& grid);
 
 
 int zombieMatrix(vector<vector<int>> grid);
+
+
+void critical_connections(int N, vector<vector<int>>& edges);
+
+vector<vector<int>> critConnections(int Nodes, vector<vector<int>>& edges);

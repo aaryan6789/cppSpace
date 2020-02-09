@@ -89,7 +89,7 @@ public:
 
 };
 
-
+#include "circular_queue.h"
 
 int main(int argc, char* argv[]) {
     PriorityQueue<int> pq(5);
@@ -112,4 +112,21 @@ int main(int argc, char* argv[]) {
     pq.dequeue();
     std::cout << "PriorityQueue.top(): " << pq.top() << "\n";   // Should be '13'
     pq.dequeue();
+
+    // MyCircularQueue<int> cq(3);
+    // cq.enQueue(10);
+    // cout << cq.Front() << endl;
+    
+    // cq.enQueue(30);
+    // cq.deQueue();
+    // cq.deQueue();
+    
+    // cout << cq.Front() << endl;
+    // cout << cq.Rear() << endl;
+
+    MyCircularQueue<double> cqd(3);
+    cout << cqd.Front() << endl; 
+
+
+
 }

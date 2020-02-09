@@ -31,19 +31,19 @@ What if the BST is modified (insert/delete operations) often and you need to fin
 */
 
 // Method 1 : Using inorder Traversal
-void inOrderTraversalR(TreeNode* root, vector<int>& inorder){
+void inOrderTraversalRR(TreeNode* root, vector<int>& inorder){
     if(root->left)
-        inOrderTraversalR(root->left, inorder);
+        inOrderTraversalRR(root->left, inorder);
 
     inorder.push_back(root->val);
 
     if(root->right)
-        inOrderTraversalR(root->right, inorder);
+        inOrderTraversalRR(root->right, inorder);
 }
 
 int kthSmallest(TreeNode* root, int k) {
     vector<int> inOrder;
-    inOrderTraversalR(root, inOrder);
+    inOrderTraversalRR(root, inOrder);
     
     return inOrder[k-1];
 }
@@ -69,7 +69,7 @@ TreeNode* dfs (TreeNode *root, int &k) {
     return rNode;
 }
 
-int kthSmallest(TreeNode* root, int k) {
+int kthSmallest2(TreeNode* root, int k) {
     TreeNode *result = dfs(root, k);
     return result->val;
 }
@@ -77,7 +77,7 @@ int kthSmallest(TreeNode* root, int k) {
 
 
 // Method 2 : Using Stack and BST Property
-int kthSmallest(TreeNode* root, int k) {
+int kthSmallest3(TreeNode* root, int k) {
     stack<TreeNode*> s;
     
     while(root != NULL || !s.empty()){

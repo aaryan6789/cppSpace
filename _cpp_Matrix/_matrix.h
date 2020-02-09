@@ -16,3 +16,7 @@ void rotateMatrix(vector<vector<int>>& mat);
 vector<vector<int>> transposeMatrix(vector<vector<int>>& A);
 
 void setZeroes(vector<vector<int>>& matrix);
+
+int maxScore(vector<vector<int> >& grid);
+
+vector<int> prisonAfterNDays2(vector<int>& c, int N);

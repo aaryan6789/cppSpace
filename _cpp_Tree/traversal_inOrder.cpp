@@ -164,7 +164,7 @@ void inOrderStack(TreeNode* root){
 // return the k-1 th element
 
 
-int kthSmallest(TreeNode* root, int k) {
+int kthSmallestInorder(TreeNode* root, int k) {
 	stack<TreeNode *> st;
 	TreeNode *p = root;
 	while(p || !st.empty())
@@ -180,6 +180,8 @@ int kthSmallest(TreeNode* root, int k) {
 		st.pop();
 		p = p->right;
 	}
+
+	return -1;
 }
 
 

@@ -32,10 +32,7 @@
  * Output: 42
  */
 
-
-
-
-int dfs(TreeNode* root, int& maxsum) {
+static int dfs(TreeNode* root, int& maxsum) {
     if(!root) 
         return 0;
     int l_max = max(0, dfs(root->left, maxsum));
@@ -43,7 +40,6 @@ int dfs(TreeNode* root, int& maxsum) {
     maxsum = max(l_max + r_max + root->val, maxsum);
     return root->val + max(l_max,r_max);
 }
-
 
 int maxPathSum(TreeNode* root) {
     int maxsum = INT_MIN;

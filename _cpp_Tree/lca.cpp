@@ -40,15 +40,15 @@ Space Complexity: O(N). This is because the maximum amount of space utilized
 by the recursion stack would be NN since the height of a skewed binary tree could be N.
  */
 
-TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+TreeNode* lowestCommonAncestorBT(TreeNode* root, TreeNode* p, TreeNode* q) {
     if (root == NULL)
         return NULL;
 
     if((root == p) || (root == q))
         return root;
 
-    TreeNode* leftLCA = lowestCommonAncestor(root->left, p, q);
-    TreeNode* rightLCA = lowestCommonAncestor(root->right, p, q);
+    TreeNode* leftLCA = lowestCommonAncestorBT(root->left, p, q);
+    TreeNode* rightLCA = lowestCommonAncestorBT(root->right, p, q);
 
     if(leftLCA && rightLCA)
         return root;

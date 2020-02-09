@@ -61,9 +61,10 @@ ListNode* reverseKGroup(ListNode* head, int k) {
     if(next != NULL){
         cout << "next = " << next->val << endl;
         cout << "head = " << head->val << endl;
-        head->next = reverseKGroup(next, k);        // Head is still the 1st node, and
+        head->next = reverseKGroup(next, k);        // Head is still the 1st node of that group, and
                                                     // for making the links it should point to the
-                                                    // head of the next group. That we get after reversing the group
+                                                    // head of the next group.
+                                                    // That we get after reversing the group
     }
 
     return prev;

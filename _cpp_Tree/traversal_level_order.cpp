@@ -22,7 +22,7 @@
     c) Dequeue a node from q and assign it�s value to temp_node
  */
 void printlevelOrderTraversal(TreeNode* root){
-	printf("Level Order Traversal - Using Queue\n");
+	cout << "Level Order Traversal - Using Queue" << endl;
 	if(!root)
 		return;
 
@@ -33,7 +33,7 @@ void printlevelOrderTraversal(TreeNode* root){
 	while(!q.empty()){
 		temp = q.front();
         q.pop();
-		printf("%d ", temp->val);
+		cout << temp->val;
 
 		if(temp->left != NULL)
 			q.push(temp->left);
@@ -41,6 +41,8 @@ void printlevelOrderTraversal(TreeNode* root){
 		if(temp->right)
 			q.push(temp->right);
 	}
+
+    cout << endl;
 }
 
 
