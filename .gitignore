@@ -1,0 +1,4 @@
+*.cproject
+**/*.exe
+*.exe
+//*.exe
