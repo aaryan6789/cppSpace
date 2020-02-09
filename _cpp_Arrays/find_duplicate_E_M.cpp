@@ -1,6 +1,7 @@
 #include "_array.h"
 
-/** Leetcode E | CTCI https://leetcode.com/problems/find-all-duplicates-in-an-array/
+/** Leetcode E | CTCI 
+ * https://leetcode.com/problems/find-the-duplicate-number/
  * Given an array nums containing n + 1 integers where each integer is between 1 and n
  * (inclusive), prove that at least one duplicate number must exist.
  * Assume that there is only one duplicate number, find the duplicate one.
@@ -25,7 +26,7 @@
  * O(n) And O(K) Time and Space Complexity
  */
 
-int findDuplicate2(vector<int>& nums) {
+int findDuplicateE1(vector<int>& nums) {
     int len = nums.size();
     int hash[len];
 
@@ -40,10 +41,12 @@ int findDuplicate2(vector<int>& nums) {
     return -1;
 }
 
-int findDuplicate3(vector<int>& nums) {
+int findDuplicateE2(vector<int>& nums) {
     for (int i = 0; i < nums.size(); i++) {
         while (nums[i] != i + 1) {
-            if (nums[nums[i] - 1] == nums[i]) return nums[i];
+            if (nums[nums[i] - 1] == nums[i]) 
+                return nums[i];
+            
             swap(nums[i], nums[nums[i] - 1]);
         }
     }
@@ -52,7 +55,7 @@ int findDuplicate3(vector<int>& nums) {
 }
 
 /**
- * MEDIUM
+ * MEDIUM 442 https://leetcode.com/problems/find-all-duplicates-in-an-array/
  * Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array),
  * some elements appear twice and others appear once.
 
@@ -68,7 +71,7 @@ Output:
 [2,3]
  */
 
-vector<int> findDuplicates(vector<int>& nums) {
+vector<int> findDuplicates1(vector<int>& nums) {
     unordered_map<int, int> map;
     vector<int> res{};
     for(auto& item : nums){
@@ -80,3 +83,16 @@ vector<int> findDuplicates(vector<int>& nums) {
 
     return res;
 }
+
+
+    vector<int> findDuplicates2(vector<int>& nums) {        
+        vector<int> res;
+        for(int i = 0; i < nums.size(); i ++){
+            int idx = abs(nums[i]) - 1;
+            nums[idx] = -nums[idx];
+            
+            if(nums[idx] > 0) 
+                res.push_back(idx+1);
+        }
+        return res;
+    }
