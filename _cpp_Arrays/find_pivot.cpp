@@ -49,6 +49,28 @@ int findPivot(vector<int> A, int start, int end){
 		return findPivot(A, mid+1, end);
 }
 
+int find_Pivot_Iterative(vector<int> A) {
+	int left = 0;
+	int right = A.size() -1;
+
+    if (nums[left] < nums[right])
+		return 0;
+
+    while (left <= right) {
+		int pivot = (left + right) / 2;
+		if (nums[pivot] > nums[pivot + 1])
+			return pivot + 1;
+		else {
+			if (nums[pivot] < nums[left])
+				right = pivot - 1;
+			else
+				left = pivot + 1;
+		}
+    }
+    return 0;
+}
+
+
 int binarySearchSortedRotated(vector<int> A, int key){
 	int size = A.size();
 	int pivot = findPivot(A, 0, size-1);

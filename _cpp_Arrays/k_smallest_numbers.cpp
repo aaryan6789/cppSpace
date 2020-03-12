@@ -4,6 +4,7 @@
  * Design an algorithm to find the smallest K numbers in an array.
  */
 #include "_array.h"
+#include <list>
 using namespace std;
 
 #include <queue>
@@ -13,6 +14,7 @@ vector<int> smallestK(vector<int>& nums, int k){
     cout << "Smallest " << k << " numbers in " << endl;
     printArray(nums);
 
+    // priority_queue<int, deque<int>, greater<int>> minHeap;
     priority_queue<int, vector<int>, greater<int>> minHeap;
 
     for(auto& item : nums){

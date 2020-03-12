@@ -15,7 +15,6 @@ using namespace std;
 //	  Else, keep going
 // Time Complexity = Make Heap = O(k)
 //					 Heapify = (n-k) logK
-
 int FindKthLargest2(vector<int> const &A, int k){
 	// create an min-heap using std::priority_queue and insert
 	// first k elements of the array into the heap
@@ -64,4 +63,13 @@ int findKthLargest(vector<int>& nums, int k) {
 			minHeap.pop();
 	}
 	return minHeap.top();
+}
+
+// Using Sorting
+int findKthLargestSort(vector<int>& nums, int k) {
+	if(nums.size() <k) return -1;
+	int sz = nums.size();
+	sort(nums.begin(),nums.end());
+	return nums[sz-k];
+	
 }

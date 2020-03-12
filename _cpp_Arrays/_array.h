@@ -28,6 +28,8 @@ int removeDuplicates(vector<int>& nums);
 int majorityElement(vector<int>& A);
 int majorityElement2(vector<int>& A);
 
+/// Partition Based 
+void regarrange_pos_neg(vector<int>& A);
 void peaks_and_valleys(vector<int>& A);
 
 /// SET
@@ -40,13 +42,15 @@ vector<int> kClosestElementToVal(vector<int>& A, int val);
 bool checkZeroSubArray(vector<int>& A);
 void printZeroSumSubArray(vector<int>& A);
 
+/// HEAP based Problems
 int FindKthLargest2(vector<int> const &A, int k);
-
-vector<int> productExceptSelf(vector<int>& nums);
-
 vector<int> smallestK(vector<int>& nums, int k);
 
-void regarrange_pos_neg(vector<int>& A);
+/// Array Modification
+vector<int> productExceptSelf(vector<int>& nums);
+
+
+/// Binary Search related
 
 int binarySearchSortedRotated(vector<int> A, int key);
 
