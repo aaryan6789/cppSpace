@@ -10,6 +10,12 @@ struct ListNode {
 
     // Constructor
     ListNode(int x) : val(x), next(NULL) {}     // Member initializer list
+
+    ListNode (const ListNode& obj){
+        cout << "Copy Constructor Called" << endl;
+        val = obj.val;
+        next = obj.next;
+    }
 };
 
 void printList(ListNode* head);

@@ -31,6 +31,11 @@ class LinkedList{
 		void insertMid(int val);
 
 		// Deletion
+	// LinkedList (const LinkedList& obj){
+    //     cout << "Copy Constructor Called" << endl;
+    //     val = obj.val;
+    //     next = obj.next;
+    // }
 };
 
 

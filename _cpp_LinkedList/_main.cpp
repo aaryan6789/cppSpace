@@ -73,7 +73,20 @@ int main() {
 
     printList(head2);
 
+	ListNode l1(10);
+	ListNode l2(20);
+	ListNode l3(30);
 
+	l1.next = &l2;
+	l2.next = &l3;
+
+	ListNode copyll = l1;
+
+	printList(&l1);
+
+	l1.next = nullptr;
+	printList(&l1);
+	printList(&copyll);
 
 
 

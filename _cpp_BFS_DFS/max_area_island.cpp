@@ -67,3 +67,51 @@ int maxAreaOfIsland(vector<vector<int>>& grid) {
 
     return max_area;
 }
+
+
+    int maxAreaOfIsland(vector<vector<int>>& grid) {
+        if (grid.empty()){
+            return 0;
+        }
+        
+        int R = grid.size();
+        int C = grid[0].size();
+        int max_area = 0;
+        int cur_area;
+        
+        queue<pair<int, int>> q;
+        vector<vector<int>> dirs = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
+        
+        for(int i = 0; i< R; i++){
+            for(int j = 0; j< C; j++){
+                if(grid[i][j] == 1){
+                    q.push({i, j});
+                    grid[i][j] = 0;         // Mark Visited
+                    cur_area = 0;
+                    
+                    while(!q.empty()){
+                        pair<int, int> t = q.front() ; q.pop();
+                        int x = t.first;
+                        int y = t.second;
+                        
+                        cur_area += 1;
+
+                        
+                        for(auto& d : dirs){
+                            int r = x + d[0];
+                            int c = y + d[1];
+                            
+                            if(r<0 || r>=R || c<0 || c>= C || grid[r][c] == 0)
+                                continue;
+                            
+                            grid[r][c] = 0;
+                            q.push({r, c});
+                        }
+                    }
+                    max_area = max(max_area, cur_area);
+                }
+            }
+        }
+        
+        return max_area;
+    }
