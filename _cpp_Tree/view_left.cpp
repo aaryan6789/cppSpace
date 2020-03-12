@@ -40,6 +40,7 @@
 /// until a NULL delimiter is encountered.
 
 void leftView(TreeNode* root) {
+    cout << "Left View " << endl;
     if (root == NULL)
         return;
 
@@ -72,5 +73,38 @@ void leftView(TreeNode* root) {
         }
         // Pop the delimiter of the previous level
         q.pop();
+    }
+}
+
+void leftView2(TreeNode* root) {
+    cout << "Left View " << endl;
+    if (root == NULL)
+        return;
+
+    queue<TreeNode*> q;
+    q.push(root);       // Push root
+    vector<int> left;
+    TreeNode* temp;
+
+    while (!q.empty()) {
+        int n = q.size();
+        left.push_back(q.front()->val);
+        cout << q.front()->val << " ";
+
+        if(n == 0)
+            break;
+
+        while(n--){
+            temp = q.front();
+            q.pop();
+
+            if (temp->left)
+                q.push(temp->left);
+
+            // If right child is present push into queue
+            if (temp->right)
+                q.push(temp->right);
+            
+        }
     }
 }

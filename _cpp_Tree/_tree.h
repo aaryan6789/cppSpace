@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <map>
 #include <queue>
 #include <stack>
 #include <climits>
@@ -53,6 +54,9 @@ void inOrderTraversalR2(TreeNode* root);
 void inOrderTraversalI(TreeNode* root);
 void inOrderStack(TreeNode* root);
 
+/// Tree Views
+void leftView(TreeNode* root);
+void leftView2(TreeNode* root);
 
 void inOrderTraversalR(TreeNode* root, vector<int>& inorder);
 vector<int> inorderTraversalDFS(TreeNode* root);
@@ -62,6 +66,7 @@ void printlevelOrderTraversalLine(TreeNode* root);
 void reverseLevelOrder(TreeNode* root);
 vector<vector<int>> zigzagLevelOrder(TreeNode* root);
 void printZigZagTraversal(struct TreeNode* root);
+vector<vector<int>> verticalTraversal(TreeNode* root);
 
 /// Tree Paths
 

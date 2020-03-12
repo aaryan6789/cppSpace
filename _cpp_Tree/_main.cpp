@@ -68,10 +68,19 @@ int main(){
     }
 
     printPretty(root3, 0, 5, cout);
-    invertTreeR(root3);
+    // invertTreeR(root3);
 
-    printPretty(root3, 0, 5, cout);
+    // printPretty(root3, 0, 5, cout);
 
+    cout << "Left View " << endl;
+    leftView2(root3);
+    // leftView(root3);
+    
+    cout << "Vertical Order Traversal " << endl;
+    vector<vector<int>> vo = verticalTraversal(root3);
+    for(auto v : vo){
+        printArray(v);
+    }
 
 
     return 0;
