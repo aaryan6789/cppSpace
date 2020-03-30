@@ -1,0 +1,24 @@
+https://users.cs.duke.edu/~ola/courses/cps108/code/roulette/
+
+Roulette Program
+This program simulates a game of roulette. It's designed to show how several OO techniques and how these can improve on a more traditional not completely-OO approach.
+Traditional class-based approach
+An example of a more standard approach:
+wheel.h class that simulates a roulette wheel
+wheel.cc implementation
+roulette.cc code for playing a game
+OO approach
+Here's a more object-oriented approach. A class diagram shows all the classes used.
+
+
+Here's the code
+
+bet.h
+bankroll.h
+betfactory.h
+roulette.h
+bankroll.cc
+betfactory.cc
+roulette.cc
+Owen L. Astrachan
+Last modified: Fri Jan 16 10:42:29 EST 1998
