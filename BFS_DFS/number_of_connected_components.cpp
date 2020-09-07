@@ -27,7 +27,7 @@ You can assume that no duplicate edges will appear in edges. Since all edges are
 // Method 1 : DFS + RECURSION
 void DFS(vector<vector<int>>& graph, int root, vector<int>& visited);
 int countComponentsDFS(int n, vector<vector<int>>& edges) {
-     vector<vector<int>>graph(n);
+     vector<vector<int>> graph(n);
      vector<int>visited(n);
      for(auto edge: edges){
           int from = edge[0]; 

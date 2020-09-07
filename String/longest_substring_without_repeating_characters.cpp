@@ -48,11 +48,11 @@ int lengthOfLongestSubstring(string s){
 
 int lengthOfLongestSubstring2(string s){
     int maxlen = 0;
-    int start = -1;
+    int start = 0;
     vector<int> last(256, -1);      // Last index of the character  -1 init val
     last[s[0]] = 0;                 // 1st element
 
-    for (int i = 0; i < s.length(); i++) {
+    for (int i = 1; i < s.length(); i++) {
 
         if (last[s[i]] > start) {
             start = last[s[i]];
@@ -63,6 +63,7 @@ int lengthOfLongestSubstring2(string s){
         maxlen = max(maxlen, i - start);
     }
 
+    cout << "Length of the Longest unique string in " << s << " is " << maxlen << endl;
     return maxlen;
 }
 

@@ -56,7 +56,7 @@ vector<vector<int>> updateMatrix(vector<vector<int>>& matrix) {
                 q.push({i, j}); //Put all 0s in the queue.
             }
             else{
-                dist[i][j] = INT_MAX;
+                dist[i][j] = INT8_MAX;
             }
         }
     }

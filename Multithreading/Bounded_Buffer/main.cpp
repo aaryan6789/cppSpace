@@ -22,6 +22,7 @@ Here is our implementation of a Bounded Buffer using condition variables:
  */ 
 struct BoundedBuffer {
     int* buffer;
+    
     int capacity;
 
     int front;
@@ -100,23 +101,20 @@ reference, it is necessary to avoid a copy of the buffer.
  */
 
 int main(){
-    BoundedBuffer buffer(200);
+    BoundedBuffer buffer(20);
     int num_bits = sizeof(int);
-    cout << "Num Bits " << num_bits << endl;
 
-    printf("It's %d bit system /n", sizeof(int *) * 8);
+    std::thread c1(consumer, 0, std::ref(buffer));
+    std::thread c2(consumer, 1, std::ref(buffer));
+    std::thread c3(consumer, 2, std::ref(buffer));
+    std::thread p1(producer, 0, std::ref(buffer));
+    std::thread p2(producer, 1, std::ref(buffer));
 
-    // std::thread c1(consumer, 0, std::ref(buffer));
-    // std::thread c2(consumer, 1, std::ref(buffer));
-    // std::thread c3(consumer, 2, std::ref(buffer));
-    // std::thread p1(producer, 0, std::ref(buffer));
-    // std::thread p2(producer, 1, std::ref(buffer));
-
-    // c1.join();
-    // c2.join();
-    // c3.join();
-    // p1.join();
-    // p2.join();
+    c1.join();
+    c2.join();
+    c3.join();
+    p1.join();
+    p2.join();
 
     return 0;
 }

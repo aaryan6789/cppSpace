@@ -1,5 +1,6 @@
 #include "_string.h"
 
+#define MAX_CHARS 256
 
 
 int makeAnagram(string a, string b) {

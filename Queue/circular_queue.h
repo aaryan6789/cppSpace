@@ -52,7 +52,7 @@ public:
     const int max_size;
 
     // Some Defualt values that can be used for the empty or full queue cases 
-    const T DEF_VAL = INT_MIN;
+    const T DEF_VAL = INT8_MIN;
     const T& refDef = DEF_VAL;
 
     /** Initialize your data structure here. Set the size of the queue to be k. */

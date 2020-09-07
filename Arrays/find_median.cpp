@@ -1,4 +1,4 @@
-
+#include "_array.h"
 // https://leetcode.com/problems/find-median-from-data-stream/solution/
 class MedianFinder {
 public:

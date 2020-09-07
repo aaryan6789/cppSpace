@@ -43,8 +43,6 @@ ListNode* reverseKGroup(ListNode* head, int k) {
     ListNode* next = NULL;
     ListNode* prev = NULL;
     int count = 0;
-    // in listCount = 0
-    // if (k > )
 
     while( current != NULL && count < k){
         next = current->next;

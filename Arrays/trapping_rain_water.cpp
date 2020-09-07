@@ -1,22 +1,20 @@
 
-
-
+#include "_array.h"
 
 /*
-Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+Given n non-negative integers representing an elevation map where the width of 
+each bar is 1, compute how much water it is able to trap after raining.
 
-
-The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!
+The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. 
+In this case, 6 units of rain water (blue section) are being trapped.
 
 Example:
-
 Input: [0,1,0,2,1,0,1,3,2,1,2,1]
 Output: 6
 */
 
 
 // Using 2 Pointers
-
 int trap(vector<int>& height) {
     int left = 0;
     int right = height.size() -1;
@@ -41,7 +39,6 @@ int trap(vector<int>& height) {
         
     }
     return water;
-    
 }
 
 
@@ -110,7 +107,7 @@ int findWater(int arr[], int n)
 // Since water trapped at any element = min( max_left, max_right) – arr[i] 
 // we will calculate water trapped on smaller element out of A[lo] and A[hi] 
 // first and move the pointers till lo doesn’t cross hi.
-int trap(vector<int>& height) {
+int trap2(vector<int>& height) {
     if(height.size()<=2)
         return 0;
 

@@ -33,6 +33,11 @@ int main(){
 
     first::firstUniqChar(s);
 
+    string name = "elizabethtaylorjames";
+    string name2 = "geeksforgeeks";
+    lengthOfLongestSubstring2(name);
+    lengthOfLongestSubstring2(name2);
+
     vector<string> words = {"gin", "zen", "gig", "msg", "gaga", "gaga"};
     uniqueMorseRepresentations(words);
 

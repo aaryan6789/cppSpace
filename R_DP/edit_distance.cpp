@@ -1,9 +1,6 @@
-    
-    
-    
-    
-    
-/**Approach 1: Dynamic Programming
+#include "_r_dp.h"
+/**
+ * Approach 1: Dynamic Programming
 The idea would be to reduce the problem to simple ones. 
 For example, there are two words, horse and ros and we want to compute an 
 edit distance D for them. 
@@ -33,14 +30,8 @@ compute
 
 The obvious base case is an edit distance between the empty string and non-empty string that means D[i][0] = i and D[0][j] = j.
 
-Now we have everything to actually proceed to the computations */
-
-
-
-
-
-
-
+Now we have everything to actually proceed to the computations 
+*/
 
 int minDistance(string word1, string word2) {
     int m = word1.size();

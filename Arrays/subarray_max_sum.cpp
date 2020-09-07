@@ -19,7 +19,7 @@ using namespace std;
 
 int maxSubArray(vector<int>& A){
     int max_till_here = 0;
-    int max_so_far = INT_MIN;
+    int max_so_far = INT8_MIN;
 
     for(int i=0; i<A.size(); i++){
         max_till_here += A[i];

@@ -32,7 +32,7 @@ int reverse(int x) {
         rem = x%10;
 
         // For Checking the boundaries
-        if(rev > INT_MAX/10 || rev < INT_MIN/10) {
+        if(rev > INT8_MAX/10 || rev < INT8_MIN/10) {
             return 0;
         }
 

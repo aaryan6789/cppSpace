@@ -63,7 +63,7 @@ vector<vector<int>> optimal(vector<vector<int>> a, vector<vector<int>> b, int ta
 
     auto left = 0;
     auto right = b.size() -1 ;
-    int prevDiff = INT_MAX;
+    int prevDiff = INT8_MAX;
 
     while( left < a.size() && right > 0){
         int sum = a[left][1] + b[right][1];

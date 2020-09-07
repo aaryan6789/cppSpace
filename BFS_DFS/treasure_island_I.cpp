@@ -29,7 +29,7 @@ int treasure_island(vector<vector<char>>& grid){
     int R = grid.size();
     int C = grid[0].size();
 
-    int res = INT_MAX;
+    int res = INT8_MAX;
 
     DFS(grid, 0, 0, 0, res);
 
@@ -156,7 +156,7 @@ int treasure_island_BFS(vector<vector<char>>& grid){
 
 // // BFS
 // int min_moves(vector<vector> &v){
-// int n=v.size(),i,j,m=v[0].size(),res=INT_MAX;
+// int n=v.size(),i,j,m=v[0].size(),res=INT8_MAX;
 // char c;
 // vector x;
 // queue<vector> q;

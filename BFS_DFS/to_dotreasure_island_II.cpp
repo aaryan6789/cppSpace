@@ -26,7 +26,7 @@ int bfs(vector<vector<char>>& grid, int i, int j);
 int treasure_island_II(vector<vector<char>>& grid){
     int R = grid.size();
     int C = grid[0].size();
-    int minSteps = INT_MAX;
+    int minSteps = INT8_MAX;
     cout << "Here " << endl;
     int currMin;
     for(int i = 0; i< R; i++){

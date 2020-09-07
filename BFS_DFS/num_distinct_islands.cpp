@@ -89,7 +89,7 @@ int numDistinctIslands(vector<vector<int>>& grid) {
     return islands.size();
 }
 
-
+void distinct(vector<vector<int>>& grid, int i, int j, int r, int c, string& island);
 // Using String instea of vetor to keep the shape
 // Now we can use the unordered_set
 int numDistinctIslandsDFS(vector<vector<int>>& grid) {

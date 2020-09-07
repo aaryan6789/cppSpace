@@ -25,7 +25,7 @@ string minWindowMap(string s, string t) {
     int start = 0;
     int end = 0;
     int counter = map.size();
-    int minLen = INT_MAX;
+    int minLen = INT8_MAX;
     string res = "";
     
     while(end < s.size()){

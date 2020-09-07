@@ -18,7 +18,7 @@ int uniqueMorseRepresentations(vector<string>& words);
 int uniqueMorseRepresentations1(vector<string>& words);
 int uniqueMorseRepresentations2(vector<string>& words);
 
-
+int lengthOfLongestSubstring2(string s);
 
 void pangram(string s);
 

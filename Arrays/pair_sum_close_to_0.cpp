@@ -23,7 +23,7 @@ void sum_close_to_zero(vector<int>& A){
     std::sort(A.begin(), A.end());
     printArray(A);
 
-    int minSum = INT_MAX;
+    int minSum = INT8_MAX;
 
     int min_left, min_right;
 	int l = 0;

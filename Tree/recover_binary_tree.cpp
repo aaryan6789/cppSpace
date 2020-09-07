@@ -48,15 +48,6 @@ Could you devise a constant space solution?
 // Using Inorder Traversal and 3 Pointers
 // first, current , last
 
-void recoverTree(TreeNode* root) {
-    TreeNode* prev = nullptr;
-    TreeNode* first = nullptr;
-    TreeNode* last = nullptr;
-    
-    inorder(root, prev, first, last);
-    swap(first->val, last->val);
-}
-
 void inorder(TreeNode* root, TreeNode*& prev, TreeNode*& first, TreeNode*& last){
     if(!root)
         return;
@@ -77,3 +68,13 @@ void inorder(TreeNode* root, TreeNode*& prev, TreeNode*& first, TreeNode*& last)
     
     inorder(root->right, prev, first, last);
 }
+
+void recoverTree(TreeNode* root) {
+    TreeNode* prev = nullptr;
+    TreeNode* first = nullptr;
+    TreeNode* last = nullptr;
+    
+    inorder(root, prev, first, last);
+    swap(first->val, last->val);
+}
+

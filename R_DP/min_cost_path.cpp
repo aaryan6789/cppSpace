@@ -29,7 +29,7 @@ int minCostPathR(vector<vector<int>>& cost, int m, int n){
 	int C = cost[0].size();
 	// Base Case/ Terminating R Case
 	if(m<0 || n<0)
-		return INT_MAX;
+		return INT8_MAX;
 
 	if(m == 0 && n == 0)		// Cell 0,0
 		return cost[m][n];

@@ -68,7 +68,7 @@ void leftBoundary(TreeNode* root, vector<int>& res){
         return;
     // to ensure top down order, print the node 
     // before calling itself for left subtree 
-    if(root->left){
+    if(root->left){         // it wont prin tleaf as root->left condition will fail
         res.push_back(root->val);
         leftBoundary(root->left, res);
     }

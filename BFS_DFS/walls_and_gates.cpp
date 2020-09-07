@@ -96,7 +96,7 @@ void wallsAndGatesBFS(vector<vector<int>>& rooms) {
             int c = col + dir[1];
             
             // if x y out of range or it is obstasle, or has small distance aready
-            if(r<0 || r>= R || c< 0 || c>= C || rooms[r][c] != INT_MAX){
+            if(r<0 || r>= R || c< 0 || c>= C || rooms[r][c] != INT8_MAX){
                 continue;
             }
             

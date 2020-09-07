@@ -42,7 +42,7 @@ static int dfs(TreeNode* root, int& maxsum) {
 }
 
 int maxPathSum(TreeNode* root) {
-    int maxsum = INT_MIN;
+    int maxsum = INT8_MIN;
     dfs(root,maxsum);
     return maxsum;
 }

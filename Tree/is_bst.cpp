@@ -26,7 +26,7 @@ bool isValidBST(TreeNode* root) {
 
 
 /// Simplified Method
-/// We can simplify method 1 using NULL pointers instead of INT_MIN and INT_MAX
+/// We can simplify method 1 using NULL pointers instead of INT8_MIN and INT8_MAX
 /// values.
 
 

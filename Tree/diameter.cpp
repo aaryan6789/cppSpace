@@ -1,9 +1,6 @@
 
 #include "_tree.h"
 
-
-
-
 int DFS(TreeNode* root, int& ans){
 	if(!root) return 0;
 	

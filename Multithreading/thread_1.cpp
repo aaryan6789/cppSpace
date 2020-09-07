@@ -64,10 +64,8 @@ int main(){
     t1.join();
 
     for(auto i : val){
-        cout << i << endl;
+        cout << "val " << i << endl;
     }
-
-
 
 
     // 1. Creating a thread using Function Pointer

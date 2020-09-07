@@ -94,7 +94,7 @@ void LRUCache::display(){
 
 // Better Approach
 // Data Structure Used = List
-// Most recent key-value pair is in the fron tof the list
+// Most recent key-value pair is in the front of the list
 // A map for a Quick reference to the keys in the cache
 class LRUCache2 {
 public:

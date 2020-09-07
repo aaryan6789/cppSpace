@@ -171,7 +171,7 @@ void buildLadders(const string& beginWord,
     }
 }
 
-vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) {
+vector<vector<string>> findLadders1(string beginWord, string endWord, vector<string>& wordList) {
     unordered_set<string> dict(wordList.begin(), wordList.end());
     if (dict.find(endWord) == dict.end())
         return {};
@@ -193,7 +193,14 @@ vector<vector<string>> findLadders(string beginWord, string endWord, vector<stri
  *  the word-to-children mapping at the same time. 
  * Then, use DFS (backtracking) to generate the transformation sequences according to the mapping.
  */
-vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) {
+void findChildren(string word, unordered_set<string>& next, unordered_set<string>& dict, 
+                  unordered_map<string, vector<string>>& children);
+
+void genLadders(string beginWord, string endWord, 
+                unordered_map<string, vector<string>>& children, 
+                vector<string>& ladder, vector<vector<string>>& ladders);
+ 
+vector<vector<string>> findLadders2(string beginWord, string endWord, vector<string>& wordList) {
     unordered_set<string> dict(wordList.begin(), wordList.end());
     unordered_set<string> current;
     unordered_set<string> next;
