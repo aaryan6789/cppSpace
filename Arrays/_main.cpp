@@ -71,6 +71,6 @@ int main(){
 
     cout << binarySearchSortedRotated(AA, 4);
 
-    // Hello
-    // World
+    vector<int> slide = maxSlidingWindow(AA, 3);
+    printArray(slide);
 }

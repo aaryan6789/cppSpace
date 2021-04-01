@@ -66,6 +66,41 @@ vector<int> mergeKSortedArrays(vector< vector<int> >& A){       // 2D vector giv
     return result;
 }
 
+
+// Merge K Sorted Arrays
+vector<int> mergeKSortedArrays1(vector<vector<int>>& A){
+    cout << "Merge " << A.size() << " Arrays" << endl;
+    vector<int> res = {};
+
+    if(A.size() == 0){
+        return res;
+    }
+
+    // Make a Min Heap of Vector
+    typedef vector<int> vi;     // {item, i, j}
+    priority_queue<vi, vector<vi>, greater<vi>> minHeap;
+
+    for(int i = 0; i<A.size(); i++){
+        minHeap.push({A[i][0], i, 0});
+    }
+
+    while(!minHeap.empty()){
+        vector<int> top = minHeap.top();    minHeap.pop();
+        int x = top[1];
+        int y = top[2];
+        res.push_back(top[0]);
+
+        // Push the next item on the heap from that vector
+        if(y+1 < A[x].size()){
+            minHeap.push({A[x][y+1], x , y+1});
+        }
+    }
+
+    return res;
+}
+
+
+
 /**
  * Algo 2 - Combine and sort
  * - Add all the arrays together and then sort them

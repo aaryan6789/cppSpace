@@ -51,6 +51,7 @@ int main(){
     root2->left->left = left22;
     root2->left->right = right22;
 
+    binaryTreePathsR(root2);
     cout << shortestDistanceBST(root2, 20, 30) << endl;
     cout << shortestDistanceBST(root2, 40, 30) << endl;
     cout << shortestDistanceBST(root2, 20, 20) << endl;

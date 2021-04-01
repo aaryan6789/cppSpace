@@ -55,6 +55,6 @@ vector<int> productExceptSelf(vector<int>& nums);
 
 int binarySearchSortedRotated(vector<int> A, int key);
 
-
+vector<int> maxSlidingWindow(vector<int>& nums, int k);
 // template<typename T>
 // vector<T> kClosestElementToVal(vector<T>& A, T val);

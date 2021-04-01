@@ -24,10 +24,9 @@ int main(){
                                  {'0','0','1','0','0'},
                                  {'0','0','0','1','1'}};
 
-    // cout << "Num Islands = " << numIslands(grid) << endl;
+    cout << "Num Islands = " << numIslandsBFS(grid) << endl;
 
     // cout << "Num Islands = " << numIslandsBFS(grid) << endl;
- 
 
     vector<vector<int>> grid2 = {{ 1,  1,  0,  0 , 0 },
                                  { 1 , 1 , 0 , 0 , 0 },
@@ -89,6 +88,13 @@ int main(){
     {
         cout<<x[0]<<" "<<x[1]<<endl;
     }
+
+    vector<vector<int> > grid5 = {{ 1, 1, 0, 1, 1 }, 
+                                  { 1, 0, 0, 0, 0 }, 
+                                  { 0, 0, 0, 0, 1 }, 
+                                  { 1, 1, 0, 1, 1 } }; 
+  
+    cout << "Number of distinct islands is " << countDistinctIslands(grid5);
                
 
 }

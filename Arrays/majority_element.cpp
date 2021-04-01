@@ -72,45 +72,45 @@ int majorityElement2(vector<int>& A) {
 int check_for_majority(vector<int>& A, int maj);
 
 int majority_element(vector<int>& A){
-	int majority = 0;
-	int count = 0;
+    int majority = 0;
+    int count = 0;
     int size = A.size();
 
-	for(int i = 0; i< size; i++){
-		// If count is 0, then set this element as the majority
-		if(count == 0){
-			majority = A[i];
-			count = 1;
-			continue;       // Go to the ext iteration of the loop, dont go further in the loop
-		}
-		// else if the current element is a majority element
-		else {
-			if (A[i] == majority)
-				count++ ;
-			else
-				count-- ;
-		}
-	}
+    for(int i = 0; i< size; i++){
+        // If count is 0, then set this element as the majority
+        if(count == 0){
+            majority = A[i];
+            count = 1;
+            continue;       // Go to the ext iteration of the loop, dont go further in the loop
+        }
+        // else if the current element is a majority element
+        else {
+            if (A[i] == majority)
+                count++ ;
+            else
+                count-- ;
+        }
+    }
 
-	int res = check_for_majority(A, majority);
-	cout << "Majority element = " << res << endl;
-	return res;
+    int res = check_for_majority(A, majority);
+    cout << "Majority element = " << res << endl;
+    return res;
 }
 
 int check_for_majority(vector<int>& A, int maj){
-	int count = 0;
+    int count = 0;
     int size = A.size();
 
-	for(int i = 0; i<size; i++){
-		if(A[i] == maj){
-			count++;
-		}
-	}
+    for(int i = 0; i<size; i++){
+        if(A[i] == maj){
+            count++;
+        }
+    }
 
-	if(count >= size/2)
-		return maj;
-	else
-		return -1;
+    if(count >= size/2)
+        return maj;
+    else
+        return -1;
 
 }
 

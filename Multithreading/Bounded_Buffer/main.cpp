@@ -42,6 +42,7 @@ struct BoundedBuffer {
         delete[] buffer;
     }
 
+    // Producer
     void deposit(int data){
         std::unique_lock<std::mutex> l(lock);
 
@@ -52,7 +53,7 @@ struct BoundedBuffer {
         ++count;
 
         l.unlock();
-        not_empty.notify_one();
+        not_empty.notify_all();
     }
 
     int fetch(){
@@ -65,14 +66,14 @@ struct BoundedBuffer {
         --count;
 
         l.unlock();
-        not_full.notify_one();
+        not_full.notify_all();
 
         return result;
     }
 };
 
 void consumer(int id, BoundedBuffer& buffer){
-    for(int i = 0; i < 50; ++i){
+    for(int i = 0; i < 5; ++i){
         int value = buffer.fetch();
         std::cout << "Consumer " << id << " fetched " << value << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(250));
@@ -80,7 +81,7 @@ void consumer(int id, BoundedBuffer& buffer){
 }
 
 void producer(int id, BoundedBuffer& buffer){
-    for(int i = 0; i < 75; ++i){
+    for(int i = 0; i < 7; ++i){
         buffer.deposit(i);
         std::cout << "Produced " << id << " produced " << i << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
@@ -102,7 +103,8 @@ reference, it is necessary to avoid a copy of the buffer.
 
 int main(){
     BoundedBuffer buffer(20);
-    int num_bits = sizeof(int);
+    int num_byts = sizeof(int);
+    cout << num_byts << endl;
 
     std::thread c1(consumer, 0, std::ref(buffer));
     std::thread c2(consumer, 1, std::ref(buffer));

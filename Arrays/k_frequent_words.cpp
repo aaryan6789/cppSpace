@@ -51,7 +51,7 @@ vector<string> topKFrequent(vector<string>& words, int k) {
         map[words[i]]++;
     }
     
-    vector<string> result;
+    vector<string> result {};
     
     // 2. Heap for storing all the top K words
     // priority_queue<pair<int, string>> maxHeap;      // This wont keep the order

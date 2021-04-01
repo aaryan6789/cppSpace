@@ -9,9 +9,12 @@ contains the following
     int height, 
     int width and 
     int depth
+
 ## Methods: 
->>  boolean fitIn(Dimensions), 
->>  int getVolume()
+
+`   bool fitIn(Dimensions)`
+
+`   int getVolume()`
 
 # Object Package 
 contains the following:

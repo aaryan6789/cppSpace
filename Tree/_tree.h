@@ -70,7 +70,7 @@ void printZigZagTraversal(struct TreeNode* root);
 vector<vector<int>> verticalTraversal(TreeNode* root);
 
 /// Tree Paths
-
+vector<string> binaryTreePathsR(TreeNode* root);
 vector<string> binaryTreePathsI(TreeNode* root);
 
 vector<string> binaryTreePathsII(TreeNode* root);

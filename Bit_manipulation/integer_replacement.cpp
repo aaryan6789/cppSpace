@@ -20,7 +20,7 @@ int integerReplacement(int n) {
     int count = 0;
 
     // Corner Case
-    if (n == INT8_MAX)
+    if (n == INT_MAX)
         return 32;
 
     // Base Case

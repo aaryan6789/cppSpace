@@ -25,12 +25,14 @@ using namespace std;
 void helper(vector<string> &res, string &cur, TreeNode *root);
 
 vector<string> binaryTreePathsR(TreeNode* root) {
+    cout << "Binary Tree Root to Leaf Paths" << endl;
     vector<string> res;
     if(root == nullptr)
         return res;
 
     string cur = to_string(root->val);
     helper(res, cur, root);
+    printArray(res);
     return res;
 }
 
