@@ -2,3 +2,6 @@
 **/*.exe
 *.exe
 //*.exe
+**/*.pyc
+**/__pycache__/
+__pycache__/
